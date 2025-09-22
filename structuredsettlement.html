@@ -8,11 +8,12 @@
   <script src="https://unpkg.com/lucide-static"></script>
 </head>
 <body class="font-sans text-gray-800">
-    <header class="bg-white shadow-md sticky top-0 z-50">
+<header class="bg-white shadow-md sticky top-0 z-50">
   <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
     <div>
       <a href="./index.html" class="text-2xl font-bold text-brand-dark-gray">JG Wentworth</a>
     </div>
+
     <!-- Desktop Menu -->
     <div class="hidden md:flex items-center space-x-6">
       <a href="./structuredsettlement.html" class="text-gray-600 hover:text-brand-green">Structured Settlements</a>
@@ -20,7 +21,8 @@
       <a href="./debt.html" class="text-gray-600 hover:text-brand-green">Debt Relief</a>
       <a href="./onboard.html" class="bg-green-600 text-white font-semibold py-2 px-4 rounded-full hover:bg-green-500 transition duration-300">Get Started Now</a>
     </div>
-    <!-- Mobile Hamburger -->
+
+    <!-- Mobile Hamburger (correctly placed outside desktop menu) -->
     <div class="md:hidden">
       <button id="menu-btn" class="text-gray-800 focus:outline-none">
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -38,10 +40,11 @@
       <a href="./structuredsettlement.html" class="text-gray-600 hover:text-brand-green">Structured Settlements</a>
       <a href="./Annuities.html" class="text-gray-600 hover:text-brand-green">Annuities</a>
       <a href="./debt.html" class="text-gray-600 hover:text-brand-green">Debt Relief</a>
-      <a href="./onboard.html" class="bg-green-600  text-white font-semibold py-2 px-4 rounded-full hover:bg-green-600 transition duration-300 text-center">Get a Free Quote</a>
+      <a href="./onboard.html" class="bg-green-600 text-white font-semibold py-2 px-4 rounded-full hover:bg-green-600 transition duration-300 text-center">Get Started Now</a>
     </div>
   </div>
 </header>
+
 
 <!-- Script -->
 <script>
@@ -158,5 +161,17 @@
   <script>
     lucide.createIcons();
   </script>
+    <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const menuBtn = document.getElementById("menu-btn");
+    const mobileMenu = document.getElementById("mobile-menu");
+
+    menuBtn.addEventListener("click", () => {
+  mobileMenu.classList.toggle("max-h-0");
+  mobileMenu.classList.toggle("max-h-screen");
+});
+
+  });
+</script>
 </body>
 </html>

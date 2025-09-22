@@ -8,18 +8,21 @@
   <script src="https://unpkg.com/lucide-static"></script>
 </head>
 <body class="font-sans text-gray-800">
-    <header class="bg-white shadow-md sticky top-0 z-50">
+  <header class="bg-white shadow-md sticky top-0 z-50">
   <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
     <div>
       <a href="./index.html" class="text-2xl font-bold text-brand-dark-gray">JG Wentworth</a>
     </div>
+
     <!-- Desktop Menu -->
     <div class="hidden md:flex items-center space-x-6">
       <a href="./structuredsettlement.html" class="text-gray-600 hover:text-brand-green">Structured Settlements</a>
       <a href="./Annuities.html" class="text-gray-600 hover:text-brand-green">Annuities</a>
       <a href="./debt.html" class="text-gray-600 hover:text-brand-green">Debt Relief</a>
-       <a href="./onboard.html" class="bg-green-600 text-white font-semibold py-2 px-4 rounded-full hover:bg-green-500 transition duration-300">Get Started Now</a>
-    <!-- Mobile Hamburger -->
+      <a href="./onboard.html" class="bg-green-600 text-white font-semibold py-2 px-4 rounded-full hover:bg-green-500 transition duration-300">Get Started Now</a>
+    </div>
+
+    <!-- Mobile Hamburger (correctly placed outside desktop menu) -->
     <div class="md:hidden">
       <button id="menu-btn" class="text-gray-800 focus:outline-none">
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -37,26 +40,13 @@
       <a href="./structuredsettlement.html" class="text-gray-600 hover:text-brand-green">Structured Settlements</a>
       <a href="./Annuities.html" class="text-gray-600 hover:text-brand-green">Annuities</a>
       <a href="./debt.html" class="text-gray-600 hover:text-brand-green">Debt Relief</a>
-      <a href="./onboard.html" class="bg-green-600  text-white font-semibold py-2 px-4 rounded-full hover:bg-green-600 transition duration-300 text-center">Get Started Now</a>
+      <a href="./onboard.html" class="bg-green-600 text-white font-semibold py-2 px-4 rounded-full hover:bg-green-600 transition duration-300 text-center">Get Started Now</a>
     </div>
   </div>
 </header>
 
-<!-- Script -->
-<script>
-  const menuBtn = document.getElementById("menu-btn");
-  const mobileMenu = document.getElementById("mobile-menu");
 
-  menuBtn.addEventListener("click", () => {
-    if (mobileMenu.classList.contains("max-h-0")) {
-      mobileMenu.classList.remove("max-h-0");
-      mobileMenu.classList.add("max-h-96"); // expands
-    } else {
-      mobileMenu.classList.remove("max-h-96");
-      mobileMenu.classList.add("max-h-0"); // collapses
-    }
-  });
-</script>
+
 
   <!-- HERO SECTION -->
   <section class="relative bg-cover bg-center h-[70vh] flex items-center justify-center" style="background-image: url('https://images.unsplash.com/photo-1567427017947-545c5f8d16ad?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');">
@@ -157,5 +147,20 @@
   <script>
     lucide.createIcons();
   </script>
+  <!-- Script -->
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const menuBtn = document.getElementById("menu-btn");
+    const mobileMenu = document.getElementById("mobile-menu");
+
+    menuBtn.addEventListener("click", () => {
+  mobileMenu.classList.toggle("max-h-0");
+  mobileMenu.classList.toggle("max-h-screen");
+});
+
+  });
+</script>
+
 </body>
+
 </html>
