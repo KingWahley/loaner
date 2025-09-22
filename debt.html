@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Debt Relief | JG Wentworth</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide-static"></script>
+</head>
+<body class="font-sans text-gray-800">
+    <header class="bg-white shadow-md sticky top-0 z-50">
+  <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+    <div>
+      <a href="./index.html" class="text-2xl font-bold text-brand-dark-gray">JG Wentworth</a>
+    </div>
+    <!-- Desktop Menu -->
+    <div class="hidden md:flex items-center space-x-6">
+      <a href="./structuredsettlement.html" class="text-gray-600 hover:text-brand-green">Structured Settlements</a>
+      <a href="./Annuities.html" class="text-gray-600 hover:text-brand-green">Annuities</a>
+      <a href="./debt.html" class="text-gray-600 hover:text-brand-green">Debt Relief</a>
+      <a href="./onboard.html" class="bg-brand-green text-white font-semibold py-2 px-4 rounded-full hover:bg-green-600 transition duration-300">Get a Free Quote</a>
+    </div>
+    <!-- Mobile Hamburger -->
+    <div class="md:hidden">
+      <button id="menu-btn" class="text-gray-800 focus:outline-none">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+            d="M4 6h16M4 12h16m-7 6h7"></path>
+        </svg>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu with animation -->
+  <div id="mobile-menu"
+       class="max-h-0 overflow-hidden transition-all duration-500 ease-in-out bg-white shadow-lg md:hidden">
+    <div class="px-6 py-4 flex flex-col space-y-4">
+      <a href="./structuredsettlement.html" class="text-gray-600 hover:text-brand-green">Structured Settlements</a>
+      <a href="./Annuities.html" class="text-gray-600 hover:text-brand-green">Annuities</a>
+      <a href="./debt.html" class="text-gray-600 hover:text-brand-green">Debt Relief</a>
+      <a href="./onboard.html" class="bg-brand-green text-white font-semibold py-2 px-4 rounded-full hover:bg-green-600 transition duration-300 text-center">Get a Free Quote</a>
+    </div>
+  </div>
+</header>
+
+<!-- Script -->
+<script>
+  const menuBtn = document.getElementById("menu-btn");
+  const mobileMenu = document.getElementById("mobile-menu");
+
+  menuBtn.addEventListener("click", () => {
+    if (mobileMenu.classList.contains("max-h-0")) {
+      mobileMenu.classList.remove("max-h-0");
+      mobileMenu.classList.add("max-h-96"); // expands
+    } else {
+      mobileMenu.classList.remove("max-h-96");
+      mobileMenu.classList.add("max-h-0"); // collapses
+    }
+  });
+</script>
+
+  <!-- HERO SECTION -->
+  <section class="relative bg-cover bg-center h-[70vh] flex items-center justify-center" style="background-image: url('https://images.unsplash.com/photo-1567427017947-545c5f8d16ad?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');">
+    <div class="absolute inset-0 bg-black/50"></div>
+    <div class="relative z-10 text-center text-white px-6">
+      <h1 class="text-4xl md:text-6xl font-bold mb-4">Debt Relief</h1>
+      <p class="text-lg md:text-xl max-w-2xl mx-auto">Take control of your finances and reduce your monthly payments with our proven debt relief solutions.</p>
+      <a href="#get-started" class="mt-6 inline-block bg-green-600 text-white font-semibold py-3 px-6 rounded-full hover:bg-green-700 transition">Get a Free Quote</a>
+    </div>
+  </section>
+
+  <!-- WHAT IS DEBT RELIEF -->
+  <section class="py-16 container mx-auto px-6">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl font-bold text-brand-dark-gray">What Is Debt Relief?</h2>
+      <p class="mt-4 text-gray-600 max-w-2xl mx-auto">Debt relief is the process of negotiating with creditors to lower the total amount you owe or restructure your payments into a single, more affordable monthly plan. JG Wentworth works with you every step of the way to help reduce financial stress and put you back on the path to stability.</p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-10">
+      <div class="text-center p-6 bg-white shadow-lg rounded-2xl hover:shadow-xl transition">
+        <i data-lucide="handshake" class="w-12 h-12 text-green-600 mx-auto mb-4"></i>
+        <h3 class="font-semibold text-xl mb-2">Creditor Negotiation</h3>
+        <p class="text-gray-600">We work directly with your creditors to reduce what you owe.</p>
+      </div>
+
+      <div class="text-center p-6 bg-white shadow-lg rounded-2xl hover:shadow-xl transition">
+        <i data-lucide="credit-card" class="w-12 h-12 text-green-600 mx-auto mb-4"></i>
+        <h3 class="font-semibold text-xl mb-2">Consolidated Payments</h3>
+        <p class="text-gray-600">Combine multiple debts into one manageable monthly payment.</p>
+      </div>
+
+      <div class="text-center p-6 bg-white shadow-lg rounded-2xl hover:shadow-xl transition">
+        <i data-lucide="smile" class="w-12 h-12 text-green-600 mx-auto mb-4"></i>
+        <h3 class="font-semibold text-xl mb-2">Stress-Free Living</h3>
+        <p class="text-gray-600">Reduce collection calls and regain peace of mind.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- BENEFITS -->
+  <section class="bg-gray-50 py-16">
+    <div class="container mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Benefits of Debt Relief</h2>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="bg-white p-6 rounded-2xl shadow hover:shadow-xl transition">
+          <i data-lucide="dollar-sign" class="w-10 h-10 text-green-600 mb-4"></i>
+          <h4 class="font-semibold text-lg mb-2">Lower Monthly Payments</h4>
+          <p class="text-gray-600">Make your payments more affordable without adding new loans.</p>
+        </div>
+        <div class="bg-white p-6 rounded-2xl shadow hover:shadow-xl transition">
+          <i data-lucide="clock" class="w-10 h-10 text-green-600 mb-4"></i>
+          <h4 class="font-semibold text-lg mb-2">Faster Debt Resolution</h4>
+          <p class="text-gray-600">Resolve your debt in less time compared to minimum payments.</p>
+        </div>
+        <div class="bg-white p-6 rounded-2xl shadow hover:shadow-xl transition">
+          <i data-lucide="heart" class="w-10 h-10 text-green-600 mb-4"></i>
+          <h4 class="font-semibold text-lg mb-2">Peace of Mind</h4>
+          <p class="text-gray-600">Reduce financial stress and focus on your future.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS STEPS -->
+  <section class="py-16 container mx-auto px-6">
+    <h2 class="text-3xl font-bold text-center mb-12">How It Works</h2>
+    <div class="grid md:grid-cols-4 gap-8">
+      <div class="text-center">
+        <div class="bg-green-600 text-white w-16 h-16 flex items-center justify-center rounded-full mx-auto mb-4 text-xl font-bold">1</div>
+        <h4 class="font-semibold mb-2">Free Consultation</h4>
+        <p class="text-gray-600">Speak with our specialists about your debt situation.</p>
+      </div>
+      <div class="text-center">
+        <div class="bg-green-600 text-white w-16 h-16 flex items-center justify-center rounded-full mx-auto mb-4 text-xl font-bold">2</div>
+        <h4 class="font-semibold mb-2">Personalized Plan</h4>
+        <p class="text-gray-600">We create a repayment plan tailored to your needs.</p>
+      </div>
+      <div class="text-center">
+        <div class="bg-green-600 text-white w-16 h-16 flex items-center justify-center rounded-full mx-auto mb-4 text-xl font-bold">3</div>
+        <h4 class="font-semibold mb-2">Negotiation</h4>
+        <p class="text-gray-600">Our team negotiates with your creditors to lower your balances.</p>
+      </div>
+      <div class="text-center">
+        <div class="bg-green-600 text-white w-16 h-16 flex items-center justify-center rounded-full mx-auto mb-4 text-xl font-bold">4</div>
+        <h4 class="font-semibold mb-2">Freedom</h4>
+        <p class="text-gray-600">Make one simple monthly payment until your debt is resolved.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BANNER -->
+  <section id="get-started" class="bg-green-600 py-12 text-center text-white">
+    <h2 class="text-3xl font-bold mb-4">Ready to Break Free From Debt?</h2>
+    <p class="mb-6">Contact us today for a free, no-obligation debt relief consultation.</p>
+    <a href="#" class="bg-white text-green-600 font-semibold py-3 px-6 rounded-full hover:bg-gray-100 transition">Get Started Today</a>
+  </section>
+
+  <script>
+    lucide.createIcons();
+  </script>
+</body>
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Annuities | JG Wentworth</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide-static"></script>
+</head>
+<body class="font-sans text-gray-800">
+    <header class="bg-white shadow-md sticky top-0 z-50">
+  <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+    <div>
+      <a href="./index.html" class="text-2xl font-bold text-brand-dark-gray">JG Wentworth</a>
+    </div>
+    <!-- Desktop Menu -->
+    <div class="hidden md:flex items-center space-x-6">
+      <a href="./structuredsettlement.html" class="text-gray-600 hover:text-brand-green">Structured Settlements</a>
+      <a href="./Annuities.html" class="text-gray-600 hover:text-brand-green">Annuities</a>
+      <a href="./debt.html" class="text-gray-600 hover:text-brand-green">Debt Relief</a>
+      <a href="./onboard.html" class="bg-brand-green text-white font-semibold py-2 px-4 rounded-full hover:bg-green-600 transition duration-300">Get a Free Quote</a>
+    </div>
+    <!-- Mobile Hamburger -->
+    <div class="md:hidden">
+      <button id="menu-btn" class="text-gray-800 focus:outline-none">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+            d="M4 6h16M4 12h16m-7 6h7"></path>
+        </svg>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu with animation -->
+  <div id="mobile-menu"
+       class="max-h-0 overflow-hidden transition-all duration-500 ease-in-out bg-white shadow-lg md:hidden">
+    <div class="px-6 py-4 flex flex-col space-y-4">
+      <a href="./structuredsettlement.html" class="text-gray-600 hover:text-brand-green">Structured Settlements</a>
+      <a href="./Annuities.html" class="text-gray-600 hover:text-brand-green">Annuities</a>
+      <a href="./debt.html" class="text-gray-600 hover:text-brand-green">Debt Relief</a>
+      <a href="./onboard.html" class="bg-brand-green text-white font-semibold py-2 px-4 rounded-full hover:bg-green-600 transition duration-300 text-center">Get a Free Quote</a>
+    </div>
+  </div>
+</header>
+
+<!-- Script -->
+<script>
+  const menuBtn = document.getElementById("menu-btn");
+  const mobileMenu = document.getElementById("mobile-menu");
+
+  menuBtn.addEventListener("click", () => {
+    if (mobileMenu.classList.contains("max-h-0")) {
+      mobileMenu.classList.remove("max-h-0");
+      mobileMenu.classList.add("max-h-96"); // expands
+    } else {
+      mobileMenu.classList.remove("max-h-96");
+      mobileMenu.classList.add("max-h-0"); // collapses
+    }
+  });
+</script>
+
+  <!-- HERO SECTION -->
+  <section class="relative bg-cover bg-center h-[70vh] flex items-center justify-center" style="background-image: url('https://www.debt.org/wp-content/uploads/2013/05/Annuity.jpg');">
+    <div class="absolute inset-0 bg-black/50"></div>
+    <div class="relative z-10 text-center text-white px-6">
+      <h1 class="text-4xl md:text-6xl font-bold mb-4">Annuities</h1>
+      <p class="text-lg md:text-xl max-w-2xl mx-auto">Unlock the value of your annuity payments and access your money on your terms.</p>
+      <a href="#get-started" class="mt-6 inline-block bg-green-600 text-white font-semibold py-3 px-6 rounded-full hover:bg-green-700 transition">Get a Free Quote</a>
+    </div>
+  </section>
+
+  <!-- WHAT ARE ANNUITIES -->
+  <section class="py-16 container mx-auto px-6">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl font-bold text-brand-dark-gray">What Are Annuities?</h2>
+      <p class="mt-4 text-gray-600 max-w-2xl mx-auto">An annuity is a financial product that provides a stream of payments over time, often as part of a retirement plan or insurance settlement. If you need access to your funds sooner, JG Wentworth can help you turn your annuity into a lump sum payment, giving you the flexibility you deserve.</p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-10">
+      <div class="text-center p-6 bg-white shadow-lg rounded-2xl hover:shadow-xl transition">
+        <i data-lucide="wallet" class="w-12 h-12 text-green-600 mx-auto mb-4"></i>
+        <h3 class="font-semibold text-xl mb-2">Financial Freedom</h3>
+        <p class="text-gray-600">Convert your annuity into cash today and use it for opportunities, emergencies, or debt relief.</p>
+      </div>
+
+      <div class="text-center p-6 bg-white shadow-lg rounded-2xl hover:shadow-xl transition">
+        <i data-lucide="calendar" class="w-12 h-12 text-green-600 mx-auto mb-4"></i>
+        <h3 class="font-semibold text-xl mb-2">On Your Schedule</h3>
+        <p class="text-gray-600">No need to wait for scheduled payments — access funds when you need them most.</p>
+      </div>
+
+      <div class="text-center p-6 bg-white shadow-lg rounded-2xl hover:shadow-xl transition">
+        <i data-lucide="check-circle" class="w-12 h-12 text-green-600 mx-auto mb-4"></i>
+        <h3 class="font-semibold text-xl mb-2">Trusted Expertise</h3>
+        <p class="text-gray-600">Our specialists walk you through the process with transparency and care.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- BENEFITS -->
+  <section class="bg-gray-50 py-16">
+    <div class="container mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Benefits of Selling Your Annuity</h2>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="bg-white p-6 rounded-2xl shadow hover:shadow-xl transition">
+          <i data-lucide="zap" class="w-10 h-10 text-green-600 mb-4"></i>
+          <h4 class="font-semibold text-lg mb-2">Immediate Cash Access</h4>
+          <p class="text-gray-600">Stop waiting years for payments — get your money now for the things that matter.</p>
+        </div>
+        <div class="bg-white p-6 rounded-2xl shadow hover:shadow-xl transition">
+          <i data-lucide="home" class="w-10 h-10 text-green-600 mb-4"></i>
+          <h4 class="font-semibold text-lg mb-2">Home & Life Goals</h4>
+          <p class="text-gray-600">Use your funds to buy a house, start a business, or secure your family's future.</p>
+        </div>
+        <div class="bg-white p-6 rounded-2xl shadow hover:shadow-xl transition">
+          <i data-lucide="line-chart" class="w-10 h-10 text-green-600 mb-4"></i>
+          <h4 class="font-semibold text-lg mb-2">Better Investment Options</h4>
+          <p class="text-gray-600">Put your lump sum to work with investments that fit your financial goals.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS STEPS -->
+  <section class="py-16 container mx-auto px-6">
+    <h2 class="text-3xl font-bold text-center mb-12">Our Simple Process</h2>
+    <div class="grid md:grid-cols-4 gap-8">
+      <div class="text-center">
+        <div class="bg-green-600 text-white w-16 h-16 flex items-center justify-center rounded-full mx-auto mb-4 text-xl font-bold">1</div>
+        <h4 class="font-semibold mb-2">Contact Us</h4>
+        <p class="text-gray-600">Request a free consultation and share your annuity details.</p>
+      </div>
+      <div class="text-center">
+        <div class="bg-green-600 text-white w-16 h-16 flex items-center justify-center rounded-full mx-auto mb-4 text-xl font-bold">2</div>
+        <h4 class="font-semibold mb-2">Review Options</h4>
+        <p class="text-gray-600">We’ll show you personalized payout options for your annuity.</p>
+      </div>
+      <div class="text-center">
+        <div class="bg-green-600 text-white w-16 h-16 flex items-center justify-center rounded-full mx-auto mb-4 text-xl font-bold">3</div>
+        <h4 class="font-semibold mb-2">Court Approval</h4>
+        <p class="text-gray-600">Our team manages all paperwork and ensures compliance.</p>
+      </div>
+      <div class="text-center">
+        <div class="bg-green-600 text-white w-16 h-16 flex items-center justify-center rounded-full mx-auto mb-4 text-xl font-bold">4</div>
+        <h4 class="font-semibold mb-2">Get Paid</h4>
+        <p class="text-gray-600">Receive your lump sum payment securely and quickly.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BANNER -->
+  <section id="get-started" class="bg-green-600 py-12 text-center text-white">
+    <h2 class="text-3xl font-bold mb-4">Ready to Access Your Money Today?</h2>
+    <p class="mb-6">Start your journey to financial freedom with a free, no-obligation quote.</p>
+    <a href="#" class="bg-white text-green-600 font-semibold py-3 px-6 rounded-full hover:bg-gray-100 transition">Get Your Free Quote</a>
+  </section>
+
+  <script>
+    lucide.createIcons();
+  </script>
+</body>
+</html>
